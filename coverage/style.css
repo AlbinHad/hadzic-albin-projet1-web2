@@ -1,0 +1,82 @@
+:root {
+  /* Couleurs - palette de base */
+  --color-primary-400: #60A5FA;
+  --color-primary-500: #3B82F6;
+  --color-primary-600: #2563EB;
+
+  --color-accent-500: #FF6B9D;
+
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-900: #111827;
+
+  /* Espacement - système cohérent */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Typographie */
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+
+  /* Bordures */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  
+  padding: 1rem 2vw;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: clamp(10px, 2vw, 18px);
+}
+
+.navbar__logo img {
+  height: 40px;
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 3vw;
+
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: block;
+  white-space: nowrap; /
+}
+
+.navbar__menu a:hover {
+  color: #00ff22;
+}
+
+.navbar__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar__actions .btn {
+  padding: 1vh 2vw;
+  background-color: #294339;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+
+
+
