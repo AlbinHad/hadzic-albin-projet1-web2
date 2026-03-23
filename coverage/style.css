@@ -1,0 +1,604 @@
+/* =========================================
+   VARIABLES - Couleurs + spacing
+ 
+   Utilisation :
+   :root → variables globales du site
+========================================= */
+:root{
+--color-primary-green1:#386641;
+--color-primary-green2:#A7C957;
+--color-cream:#f5efe0;
+--color-white:#ffffff;
+--color-black:#111827;
+--space-2:8px;
+--space-4:16px;
+--space-6:24px;
+--space-8:32px;
+--radius-md:8px;
+--radius-lg:16px;
+}
+
+/* FONT */
+@font-face{
+font-family:"Libre Baskerville";
+src:url("../fonts/LibreBaskerville-Regular.ttf");
+}
+@font-face{
+font-family:"Libre Baskerville";
+src:url("../fonts/LibreBaskerville-Bold.ttf");
+font-weight:bold;
+}
+
+/* Base Style global */
+body{
+margin:0;
+font-family:"Libre Baskerville",serif;
+background-color:var(--color-cream);
+color:var(--color-black);
+}
+/* =========================================
+   NAV - Barre de navigation principale
+ 
+   Utilisation :
+   <header class="nav">
+     <div class="nav__brand"></div>
+     <ul class="nav__menu"></ul>
+     <a class="nav__cta"></a>
+   </header>
+ 
+   Éléments :
+   nav__brand
+   nav__menu
+   nav__link
+   nav__cta
+========================================= */
+/* NAVBAR */
+.nav{
+background-color:var(--color-primary-green1);
+padding:var(--space-4) var(--space-8);
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap: 20px;;
+}
+/* TITLE */
+.nav__brand{
+display:flex;
+align-items:center;
+gap:var(--space-2);
+}
+
+.nav__logo{
+width:40px;
+}
+
+.nav__title{
+color:white;
+font-weight:bold;
+}
+ /* MENU */
+.nav__menu{
+  display:flex;
+  gap:var(--space-6);
+  list-style:none;
+  margin:0;
+  padding:0;
+  /* aide AI : garde centré même en resize */
+  flex:0 1 auto;                
+  justify-content:center; 
+}
+
+/* LIENS */
+.nav__link{
+  color:white;
+  text-decoration:none;
+  white-space:nowrap; 
+}
+
+.nav__link:hover{
+color:var(--color-primary-green2);
+}
+
+/* =========================================
+   BTN - Boutons du site
+ 
+   Variantes :
+   btn--primary
+   btn--green
+   btn--outline
+========================================= */
+
+/* BOUTONS */
+.btn{
+padding:10px 16px;
+border-radius:var(--radius-md);
+text-decoration:none;
+}
+
+.btn--primary{
+background-color:var(--color-primary-green2);
+color:black;
+}
+
+.btn--green{
+background-color:var(--color-primary-green1);
+color:white;
+}
+
+.btn--outline{
+border:1px solid white;
+color:white;
+background:transparent;
+}
+
+/* =========================================
+   HERO - Section principale
+ 
+   Structure :
+   hero__content
+   hero__buttons
+   hero__card
+========================================= */
+/* HERO */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:80px;
+  padding:80px;
+
+  background:linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)
+  ), url("../image/Hero.png");
+
+  background-size:cover;
+  background-position:center;
+
+  color:white;
+}
+/* TEXTE */
+.hero__content{
+  max-width:400px;
+  /* aide AI : évite que le texte soit écrasé */
+   min-width:300px;
+  flex:1; /*  prend espace dispo */
+}
+
+.hero__title{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.hero__text{
+  margin-bottom:20px;
+  color:#cfcfcf;
+}
+
+.hero__buttons{
+  display:flex;
+  gap:var(--space-2);
+}
+ /* IMAGE */
+.hero__card{
+  flex:1 1 500px;   /* bouger avec layout */
+  max-width:500px;  /* aide AI : permet à l’image de réduire sans casser */
+}
+
+.hero__card img{
+  width:100%;
+  height:auto;
+  border-radius:var(--radius-lg);
+}
+/* SECTION */
+.section{
+padding:80px 40px;
+text-align:center;
+ height:auto;
+}
+
+.section__title{
+font-size:32px;
+color:var(--color-primary-green1);
+margin-bottom:20px;
+}
+
+.section__text{
+max-width:600px;
+margin:0 auto 40px;
+}
+
+/* ABOUT */
+.about{
+background-color:var(--color-cream);
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+/* =========================================
+   CARD - Carte réutilisable
+ 
+   Éléments :
+   card__img
+   card__title
+   card__text
+   card__meta
+ 
+   Variantes :
+   card--service
+========================================= */
+
+.card{
+background-color:var(--color-primary-green2);
+padding:20px;
+border-radius:var(--radius-md);
+display:flex;
+gap:15px;
+text-align:left;
+
+flex:1 1 0;
+min-width:0; /* aide AI : évite overflow */
+}
+/* IMAGE */
+.card__icon img{
+width:40px;
+}
+/* TITRE */
+.card__title{
+color:var(--color-primary-green1);
+font-weight:bold;
+}
+
+.card__meta{
+font-size:12px;
+}
+
+/* SERVICES */
+.services{
+background-color:var(--color-primary-green1);
+padding:60px 40px 80px; 
+text-align:center;
+}
+
+.services .section__title{
+color:var(--color-cream); 
+font-size:36px;
+margin-bottom:30px; 
+margin-top:0;
+}
+ 
+/* SERVICES SEULEMENT */
+ /* VARIANTE SERVICE */
+.services .card--service{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+
+  flex:1 1 0;
+  min-width:0;
+}
+
+/* ACTIVITÉS */
+.activities{
+background-color:var(--color-cream);
+padding:60px 80px;
+}
+
+.activities__container{
+display:flex;
+justify-content:space-between; /* Aide ai pour stretch bizzare */
+align-items:center;
+max-width:1100px;
+margin:0 auto;
+}
+
+.activities__left{
+max-width:400px;
+}
+
+.activities__title{
+font-size:46px;
+color:var(--color-primary-green1);
+}
+
+.activities__text{
+color:#666;
+}
+
+.activities__right{
+width:450px;
+}
+ 
+/* ITEM */
+.activity{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+border-bottom:1px solid #c7c7c7;
+}
+
+.activity__info{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.activity__icon img{
+width:32px;
+}
+
+.activity__name{
+color:var(--color-primary-green1);
+}
+
+.activity__date{
+color:var(--color-primary-green1);
+min-width:120px;
+text-align:right;
+}
+
+/* Avis utilisateurs*/
+.testimonials{
+background-color:var(--color-primary-green1);
+padding:60px 80px;
+}
+
+.testimonials__container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1100px;
+margin:0 auto;
+}
+
+.testimonials__cards{
+display:flex;
+gap:20px;
+}
+/* CARD */
+.testimonial{
+background-color:var(--color-primary-green2);
+padding:20px;
+border-radius:var(--radius-md);
+width:180px;
+}
+
+.testimonial__header{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.testimonial__icon img{
+width:24px;
+}
+
+.testimonials__title h2{
+color:var(--color-cream);
+font-size:40px;
+}
+
+/* CONTACT */
+.contact{
+background-color:var(--color-cream);
+padding:80px 40px;
+text-align:center;
+}
+
+.contact__title{
+color:var(--color-primary-green1);
+font-size:36px;
+margin-bottom:40px;
+}
+
+.contact__form{
+max-width:900px;
+margin:0 auto;
+}
+
+.contact__row{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-bottom:30px;
+}
+
+.contact__group{
+display:flex;
+flex-direction:column;
+text-align:left;
+}
+
+.contact__group label{
+margin-bottom:5px;
+font-size:14px;
+}
+
+.contact__group input{
+padding:10px;
+border-radius:6px;
+border:none;
+width:200px;
+}
+/* BOUTON */
+.contact__btn{
+background-color:var(--color-primary-green1);
+color:white;
+border:none;
+padding:12px 40px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* FOOTER */
+.footer{
+background-color:var(--color-primary-green1);
+padding:30px 60px;
+}
+
+.footer__container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.footer__links{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.footer__links a{
+color:var(--color-primary-green2);
+text-decoration:none;
+font-size:14px;
+}
+
+
+.services .cards{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+
+.services .card--service{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  width:200px;       
+  flex-shrink:0;
+
+  background-color:var(--color-primary-green2);
+  padding:20px;
+  border-radius:var(--radius-md);
+}
+
+/* TEXTE PROPRE */
+.services .card--service div{
+  flex:1;
+  min-width:0;
+}
+
+.services .card__title,
+.services .card__text{
+  word-break:normal;   
+   overflow-wrap:break-word;   
+}
+.hero__buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+   align-items:flex-start;
+}
+ .hero__buttons a{
+  flex:0 0 auto;   /*  empêche stretch */
+}
+
+
+/* ABOUT FINAL (TON HTML) */
+
+
+.about{
+  background-color:var(--color-cream);
+  text-align:center;
+  padding:80px 40px;
+}
+
+/* CONTAINER */
+.about .cards{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+
+/* CARTE */
+.about__card{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+
+  flex:1;
+  min-width:0;
+  padding:20px 30px;
+
+  background-color:var(--color-primary-green2);
+  border-radius:var(--radius-md);
+}
+
+/* ICONE */
+.about .card__icon-box{
+  background-color:#cfe09a;
+  padding:10px;
+  border-radius:8px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+}
+
+.about .card__icon-box img{
+  width:32px;
+}
+
+/* TEXTE */
+.about__card > div{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  text-align:left;
+}
+
+.about .card__title{
+  margin:0;
+  font-weight:bold;
+  color:var(--color-primary-green1);
+}
+
+.about .card__text{
+  margin:5px 0;
+  line-height:1.4;
+}
+
+.about .card__meta{
+  font-size:12px;
+  margin-top:5px;
+}
+/* FIX SERVICES SANS CASSER LE RESTE */
+.services .card--service{
+  width:200px;
+  flex-shrink:0;
+}
+
+.services .card__title,
+.services .card__text{
+  word-break:normal;
+  overflow-wrap:break-word;
+}
+
+/* FIX SANS CASSER LE BASE */
+.hero__card--fit{
+  flex:0 0 auto;      /* 🔥 stop stretch */
+
+  width:500px;      
+  max-width:100%;
+
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:20px;
+
+  flex-shrink:0;
+}
+
+.hero__card--fit img{ 
+  width:100%;
+  height:100%;
+  object-fit:cover; /* aide AI : bon cadrage */
+}
