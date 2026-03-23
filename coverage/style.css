@@ -1,7 +1,7 @@
 :root {
   /* Couleurs - palette de base */
-  --color-primary-400: #60A5FA;
-  --color-primary-500: #3B82F6;
+  --color-primary-green1: #386641;
+  --color-primary-green2: #A7C957;
   --color-primary-600: #2563EB;
 
   --color-accent-500: #FF6B9D;
@@ -26,57 +26,9 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
-
-display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  
-  padding: 1rem 2vw;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: clamp(10px, 2vw, 18px);
 }
 
-.navbar__logo img {
-  height: 40px;
+.nav__menu {
+    background-color: var(--color-primary-green1);
+    font-family: "Libre Baskerville";
 }
-
-.navbar__menu {
-  display: flex;
-  gap: 3vw;
-
-  list-style: none; 
-  margin: 0;
-  padding: 0;
-}
-
-.navbar__menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-  display: block;
-  white-space: nowrap; /
-}
-
-.navbar__menu a:hover {
-  color: #00ff22;
-}
-
-.navbar__actions {
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar__actions .btn {
-  padding: 1vh 2vw;
-  background-color: #294339;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-
-
-
