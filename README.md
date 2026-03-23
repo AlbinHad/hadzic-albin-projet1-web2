@@ -102,3 +102,13 @@ L’IA m’a aidé à :
 
 
 J’ai testé et validé plusieurs fois les solutions moi-même.
+
+## 8. Problème avec l’image du hero
+
+J’ai aussi eu un problème avec l’image dans le hero.
+Même après plusieurs changements avec flexbox, l’image continuait de “shrink” au lieu de se déplacer comme je voulais.
+
+J’ai essayé plusieurs propriétés comme `flex-shrink`, `width` et `max-width`, mais le comportement changeait souvent selon les autres éléments.
+
+Finalement, j’ai réussi à améliorer un peu le rendu en ajustant le flex seulement sur l’image, mais ça a été un des points les plus difficiles à gérer dans mon projet.
+
